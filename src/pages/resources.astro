@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const freeResources = [
+  {
+    id: 'cmmc-checklist',
+    title: 'CMMC Readiness Checklist',
+    description: 'A comprehensive checklist to help you assess your readiness for CMMC Level 2 certification.',
+    type: 'Checklist',
+    icon: '📋',
+  },
+  {
+    id: 'nist-800-171',
+    title: 'NIST 800-171 Control Overview',
+    description: 'Quick reference guide covering all 110 NIST SP 800-171 security requirements.',
+    type: 'Guide',
+    icon: '📖',
+  },
+  {
+    id: 'sprs-calculator',
+    title: 'SPRS Score Explainer',
+    description: 'Understanding how your Supplier Performance Risk System score is calculated.',
+    type: 'Guide',
+    icon: '🧮',
+  },
+];
+
+const guides = [
+  {
+    id: 'cmmc-guide',
+    title: 'The Complete Guide to CMMC 2.0',
+    description: 'Everything defense contractors need to know about CMMC 2.0 requirements, levels, and certification process.',
+    sections: [
+      'What is CMMC 2.0?',
+      'The Three CMMC Levels',
+      'Self-Assessment vs. Third-Party Assessment',
+      'Timeline and Deadlines',
+      'How to Get Started',
+    ],
+  },
+  {
+    id: 'nist-guide',
+    title: 'NIST 800-171 Implementation Guide',
+    description: 'A practical guide to implementing NIST SP 800-171 security requirements in your organization.',
+    sections: [
+      'Understanding the 14 Control Families',
+      'Documentation Requirements',
+      'Technical Controls',
+      'Policy Development',
+      'Common Pitfalls to Avoid',
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: 'What is CMMC 2.0?',
+    answer: 'CMMC (Cybersecurity Maturity Model Certification) 2.0 is the Department of Defense\'s framework for assessing and certifying the cybersecurity practices of defense contractors. It was updated from the original CMMC 1.0 to streamline requirements and reduce compliance burden while maintaining security standards.',
+  },
+  {
+    question: 'Do I need CMMC certification?',
+    answer: 'If you handle Controlled Unclassified Information (CUI) as part of DoD contracts, you will likely need CMMC Level 2 certification. If you only handle Federal Contract Information (FCI), Level 1 self-assessment may be sufficient. Check your contract requirements or contact us for guidance.',
+  },
+  {
+    question: 'What is an SPRS score?',
+    answer: 'The Supplier Performance Risk System (SPRS) score is a measure of your compliance with NIST 800-171 requirements. It ranges from -203 to 110, with 110 being fully compliant. You must calculate and submit your SPRS score to bid on DoD contracts requiring NIST 800-171 compliance.',
+  },
+  {
+    question: 'How long does it take to get CMMC certified?',
+    answer: 'The timeline varies significantly based on your current security posture. Organizations starting from scratch typically need 6-12 months to implement required controls and prepare for assessment. Those with existing security programs may be ready in 3-6 months.',
+  },
+  {
+    question: 'What\'s the difference between CMMC and NIST 800-171?',
+    answer: 'NIST 800-171 defines the security requirements for protecting CUI. CMMC Level 2 is essentially an assessment framework that verifies you\'ve implemented these requirements. Think of NIST 800-171 as the "what" and CMMC as the "how it\'s verified."',
+  },
+];
+---
+
+<Layout title="Resources - sIQurity">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 lg:py-28">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Compliance
+          <span class="text-brand-gradient">Resources</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-slate-300">
+          Free guides, checklists, and resources to help you navigate CMMC, NIST 800-171, and federal compliance requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Downloads -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Free Downloads</h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+          Practical resources to help you on your compliance journey.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {freeResources.map((resource) => (
+          <div class="card p-6 lg:p-8">
+            <div class="text-4xl mb-4">{resource.icon}</div>
+            <span class="inline-block px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-medium mb-4">
+              {resource.type}
+            </span>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              {resource.title}
+            </h3>
+            <p class="text-gray-600 dark:text-slate-400 mb-6">
+              {resource.description}
+            </p>
+            <a href="/contact" class="btn-secondary w-full text-center block">
+              Request Access
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides -->
+  <section id="cmmc-guide" class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Comprehensive Guides</h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+          In-depth guides to help you understand compliance requirements.
+        </p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-8">
+        {guides.map((guide) => (
+          <div id={guide.id} class="card p-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              {guide.title}
+            </h3>
+            <p class="text-gray-600 dark:text-slate-400 mb-6">
+              {guide.description}
+            </p>
+            <div class="mb-6">
+              <h4 class="text-sm font-semibold text-gray-700 dark:text-slate-300 mb-3">What's Covered:</h4>
+              <ul class="space-y-2">
+                {guide.sections.map((section) => (
+                  <li class="flex items-start gap-2 text-gray-600 dark:text-slate-400 text-sm">
+                    <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {section}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p class="text-sm text-gray-500 dark:text-slate-400 italic">
+              Full guide coming soon. Contact us for a preview.
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="nist-800-171" class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Frequently Asked Questions</h2>
+          <p class="text-xl text-gray-600 dark:text-slate-300">
+            Common questions about CMMC, NIST 800-171, and compliance.
+          </p>
+        </div>
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="card p-6">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                {faq.question}
+              </h3>
+              <p class="text-gray-600 dark:text-slate-400">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Stay Informed
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 mb-8">
+          Get the latest compliance updates, CMMC news, and practical tips delivered to your inbox.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" action="https://formspree.io/f/your-form-id" method="POST">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            class="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent"
+          />
+          <button type="submit" class="btn-primary whitespace-nowrap">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-sm text-gray-500 dark:text-slate-400 mt-4">
+          No spam. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-gradient">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Need Personalized Guidance?
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        Resources are helpful, but nothing beats expert advice tailored to your situation. Schedule a free consultation.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold bg-white text-brand-magenta hover:bg-gray-100 transition-colors">
+        Book Your Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

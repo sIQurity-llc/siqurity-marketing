@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const deliverables = [
+  { title: 'Scoping Document', description: 'Clear definition of assessment boundaries, systems, and data flows' },
+  { title: 'Control Assessment Workbook', description: 'Detailed analysis of each of the 110 NIST 800-171 controls' },
+  { title: 'SPRS Score Calculation', description: 'Accurate calculation of your Supplier Performance Risk System score' },
+  { title: 'Gap Analysis Report', description: 'Comprehensive findings with severity levels and business impact' },
+  { title: 'Prioritized Remediation Roadmap', description: 'Step-by-step plan to close gaps efficiently' },
+  { title: 'Draft SSP', description: 'System Security Plan template tailored to your environment' },
+  { title: 'Draft POA&M', description: 'Plan of Action & Milestones for tracking remediation' },
+  { title: 'Executive Summary', description: 'High-level findings and recommendations for leadership' },
+];
+
+const pricing = [
+  { size: 'Small', employees: '5-20 employees', price: '$8,000' },
+  { size: 'Medium', employees: '20-50 employees', price: '$12,000' },
+  { size: 'Large', employees: '50-200 employees', price: '$15,000+' },
+];
+
+const whoItsFor = [
+  'Defense contractors handling CUI (Controlled Unclassified Information)',
+  'DoD subcontractors preparing for CMMC Level 2 certification',
+  'Companies needing to submit SPRS scores for contract eligibility',
+  'Organizations that have never been formally assessed',
+  'Contractors who want to validate their current compliance posture',
+];
+---
+
+<Layout title="CMMC/NIST 800-171 Readiness Assessment - sIQurity">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 lg:py-28">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <a href="/services" class="inline-flex items-center gap-2 text-brand-magenta dark:text-brand-pink hover:underline mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Services
+        </a>
+        <div class="text-5xl mb-6">🛡️</div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          CMMC/NIST 800-171
+          <span class="text-brand-gradient">Readiness Assessment</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-slate-300">
+          Comprehensive gap analysis against all 110 NIST 800-171 controls, accurate SPRS score calculation, and a prioritized roadmap to get you audit-ready.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">What You Get</h2>
+          <p class="text-lg text-gray-600 dark:text-slate-300 mb-6">
+            Our CMMC/NIST 800-171 Readiness Assessment gives you a clear picture of where you stand today and exactly what it takes to achieve compliance. No guesswork, no surprises—just actionable insights and a clear path forward.
+          </p>
+          <p class="text-gray-600 dark:text-slate-400 mb-8">
+            We evaluate your environment against every one of the 110 NIST SP 800-171 security requirements, calculate your SPRS score, identify gaps, and provide a prioritized remediation roadmap that makes sense for your business.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="btn-primary">Get Started</a>
+            <a href="#pricing" class="btn-secondary">View Pricing</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Who This Is For</h3>
+          <ul class="space-y-4">
+            {whoItsFor.map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700 dark:text-slate-300">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Deliverables</h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+          Everything you need to understand your compliance posture and take action.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {deliverables.map((item) => (
+          <div class="card p-6">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-slate-400">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">How It Works</h2>
+          <p class="text-xl text-gray-600 dark:text-slate-300">
+            A structured approach that minimizes disruption to your team.
+          </p>
+        </div>
+        <div class="space-y-8">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-gradient flex items-center justify-center text-white font-bold">1</div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Kickoff & Scoping</h3>
+              <p class="text-gray-600 dark:text-slate-400">We define the assessment boundaries, identify in-scope systems, and gather initial documentation. This ensures we're evaluating what matters for your contracts.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-gradient flex items-center justify-center text-white font-bold">2</div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Document Review</h3>
+              <p class="text-gray-600 dark:text-slate-400">We analyze your existing policies, procedures, and technical documentation to understand your current security posture.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-gradient flex items-center justify-center text-white font-bold">3</div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Technical Assessment</h3>
+              <p class="text-gray-600 dark:text-slate-400">We evaluate each of the 110 controls through interviews, technical validation, and evidence collection.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-gradient flex items-center justify-center text-white font-bold">4</div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Analysis & Scoring</h3>
+              <p class="text-gray-600 dark:text-slate-400">We calculate your SPRS score, identify gaps, and prioritize findings based on risk and remediation effort.</p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-brand-gradient flex items-center justify-center text-white font-bold">5</div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Deliverables & Readout</h3>
+              <p class="text-gray-600 dark:text-slate-400">We deliver all documentation and walk your team through findings, recommendations, and next steps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Investment</h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+          Pricing based on organization size. Timeline: 4-6 weeks.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {pricing.map((tier) => (
+          <div class="card p-8 text-center">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{tier.size}</h3>
+            <p class="text-gray-600 dark:text-slate-400 mb-4">{tier.employees}</p>
+            <div class="text-3xl font-bold text-brand-gradient mb-6">{tier.price}</div>
+            <a href="/contact" class="btn-primary w-full">Get Started</a>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-gray-500 dark:text-slate-400 mt-8 text-sm">
+        Complex environments may require custom scoping. Contact us for a detailed quote.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-gradient">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Ready to Know Where You Stand?
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        Schedule a free consultation to discuss your compliance requirements and get a clear picture of your path to CMMC certification.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold bg-white text-brand-magenta hover:bg-gray-100 transition-colors">
+        Schedule Your Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

@@ -1,0 +1,142 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const deliverables = [
+  { title: 'System Security Plan (SSP)', description: 'Comprehensive documentation of your security controls and implementation' },
+  { title: 'Plan of Action & Milestones (POA&M)', description: 'Tracking document for remediation activities and timelines' },
+  { title: 'Security Policies', description: 'Policies covering access control, incident response, and more' },
+  { title: 'Procedures', description: 'Step-by-step procedures for implementing security requirements' },
+  { title: 'Training Materials', description: 'Employee security awareness training content' },
+];
+
+const policyAreas = [
+  'Access Control',
+  'Awareness & Training',
+  'Audit & Accountability',
+  'Configuration Management',
+  'Identification & Authentication',
+  'Incident Response',
+  'Media Protection',
+  'Personnel Security',
+  'Physical Protection',
+  'Risk Assessment',
+  'Security Assessment',
+  'System & Communications Protection',
+  'System & Information Integrity',
+  'Maintenance',
+];
+---
+
+<Layout title="Compliance Documentation Development - sIQurity">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 lg:py-28">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <a href="/services" class="inline-flex items-center gap-2 text-brand-magenta dark:text-brand-pink hover:underline mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Services
+        </a>
+        <div class="text-5xl mb-6">📄</div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Compliance Documentation
+          <span class="text-brand-gradient">Development</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-slate-300">
+          Professional development of SSPs, POA&Ms, security policies, and procedures tailored to your organization and compliance requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Documentation That Works</h2>
+          <p class="text-lg text-gray-600 dark:text-slate-300 mb-6">
+            Good compliance documentation isn't about checking boxes—it's about having policies and procedures that actually reflect how your organization operates and protects information.
+          </p>
+          <p class="text-gray-600 dark:text-slate-400 mb-8">
+            We develop documentation that's accurate, defensible, and practical. Your SSP will accurately describe your environment. Your policies will be implementable. Your procedures will be followable. And it will all hold up under audit scrutiny.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="btn-primary">Get Started</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Policy Areas Covered</h3>
+          <div class="grid grid-cols-2 gap-2">
+            {policyAreas.map((area) => (
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm text-gray-700 dark:text-slate-300">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Deliverables</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {deliverables.map((item) => (
+          <div class="card p-6">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-slate-400">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Investment</h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 mb-8">
+          Timeline: 4-8 weeks
+        </p>
+        <div class="card p-8">
+          <div class="text-4xl font-bold text-brand-gradient mb-4">$5,000 - $15,000</div>
+          <p class="text-gray-600 dark:text-slate-400 mb-6">
+            Pricing based on scope and existing documentation.
+          </p>
+          <a href="/contact" class="btn-primary">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-gradient">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Get Audit-Ready Documentation
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        Don't let poor documentation be the reason you fail an assessment. Let's build documentation that works.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold bg-white text-brand-magenta hover:bg-gray-100 transition-colors">
+        Start Your Documentation Project
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

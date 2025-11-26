@@ -1,0 +1,138 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const deliverables = [
+  { title: 'STIG Scan Results', description: 'Comprehensive automated scan results against applicable baselines' },
+  { title: 'Findings Report', description: 'Detailed findings with severity rankings (CAT I, II, III)' },
+  { title: 'Remediation Recommendations', description: 'Actionable guidance for addressing each finding' },
+  { title: 'Remediation Timeline', description: 'Prioritized schedule for addressing findings by severity' },
+];
+
+const stigs = [
+  'Windows Server STIGs',
+  'Windows 10/11 Desktop STIGs',
+  'Red Hat Enterprise Linux STIGs',
+  'Ubuntu STIGs',
+  'Cisco IOS/Network Device STIGs',
+  'Microsoft Office STIGs',
+  'SQL Server STIGs',
+  'Web Server/Application STIGs',
+];
+---
+
+<Layout title="STIG Compliance Review - sIQurity">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 lg:py-28">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <a href="/services" class="inline-flex items-center gap-2 text-brand-magenta dark:text-brand-pink hover:underline mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Services
+        </a>
+        <div class="text-5xl mb-6">🔒</div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          STIG Compliance
+          <span class="text-brand-gradient">Review</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-slate-300">
+          Automated STIG scanning plus expert manual analysis against applicable Security Technical Implementation Guides to ensure your systems meet DoD hardening requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">What You Get</h2>
+          <p class="text-lg text-gray-600 dark:text-slate-300 mb-6">
+            Security Technical Implementation Guides (STIGs) are the configuration standards published by DISA for hardening DoD information systems. Many CMMC and NIST 800-171 controls require STIG-compliant configurations.
+          </p>
+          <p class="text-gray-600 dark:text-slate-400 mb-8">
+            Our STIG Compliance Review combines automated scanning tools with expert manual analysis to identify configuration weaknesses in your systems. We prioritize findings by severity and provide clear remediation guidance.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="btn-primary">Get Started</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">STIGs We Assess</h3>
+          <ul class="space-y-3">
+            {stigs.map((stig) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700 dark:text-slate-300">{stig}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm text-gray-500 dark:text-slate-400 mt-4">
+            Other STIGs available upon request.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Deliverables</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {deliverables.map((item) => (
+          <div class="card p-6">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-slate-400">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Investment</h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 mb-8">
+          Timeline: 2 weeks
+        </p>
+        <div class="card p-8">
+          <div class="text-4xl font-bold text-brand-gradient mb-4">$3,000 - $5,000</div>
+          <p class="text-gray-600 dark:text-slate-400 mb-6">
+            Pricing varies based on number of systems and applicable STIGs.
+          </p>
+          <a href="/contact" class="btn-primary">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-gradient">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Ensure Your Systems Are Hardened
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        STIG compliance is often a critical component of passing CMMC assessments. Let's evaluate your environment.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold bg-white text-brand-magenta hover:bg-gray-100 transition-colors">
+        Schedule Your Review
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

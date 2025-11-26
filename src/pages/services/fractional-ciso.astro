@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const responsibilities = [
+  { title: 'Strategic Guidance', description: '10-20 hours/month of executive-level security leadership' },
+  { title: 'Security Program Development', description: 'Build and mature your security program over time' },
+  { title: 'Vendor Management', description: 'Evaluate and manage security tool vendors and MSPs' },
+  { title: 'Board/Executive Reporting', description: 'Translate security into business terms for leadership' },
+  { title: 'Incident Response Planning', description: 'Develop and maintain incident response capabilities' },
+  { title: 'Policy & Compliance Oversight', description: 'Ensure policies align with requirements and reality' },
+];
+
+const whoItsFor = [
+  'Companies without a dedicated security leader',
+  'Organizations where IT wears too many hats',
+  'Growing businesses that need security guidance but not a full-time CISO',
+  'Companies preparing for or maintaining CMMC compliance',
+  'Businesses that need security expertise for board/client conversations',
+];
+---
+
+<Layout title="Fractional CISO Services - sIQurity">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 lg:py-28">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <a href="/services" class="inline-flex items-center gap-2 text-brand-magenta dark:text-brand-pink hover:underline mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Services
+        </a>
+        <div class="text-5xl mb-6">👔</div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Fractional CISO
+          <span class="text-brand-gradient">Services</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-slate-300">
+          Part-time security leadership for organizations that need expert guidance without the cost of a full-time executive hire.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Security Leadership On Your Terms</h2>
+          <p class="text-lg text-gray-600 dark:text-slate-300 mb-6">
+            A full-time CISO commands $200K-$400K+ in total compensation. For many organizations, that's neither affordable nor necessary. But you still need security leadership—someone who can set strategy, guide decisions, and represent security at the executive level.
+          </p>
+          <p class="text-gray-600 dark:text-slate-400 mb-8">
+            Our Fractional CISO service gives you access to senior security leadership on a part-time basis. You get the expertise and strategic guidance you need, scaled to your budget and requirements.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="btn-primary">Get Started</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Who This Is For</h3>
+          <ul class="space-y-4">
+            {whoItsFor.map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-700 dark:text-slate-300">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Responsibilities -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">What's Included</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {responsibilities.map((item) => (
+          <div class="card p-6">
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-slate-400">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Your Fractional CISO -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">Your Fractional CISO</h2>
+        <div class="card p-8">
+          <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+            <div class="w-32 h-32 rounded-full bg-gradient-to-br from-purple-100 to-blue-100 dark:from-slate-700 dark:to-slate-600 flex items-center justify-center">
+              <span class="text-5xl">👤</span>
+            </div>
+            <div class="flex-1 text-center md:text-left">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Tony Rossi</h3>
+              <p class="text-brand-magenta dark:text-brand-pink font-medium mb-4">Founder & Principal Consultant</p>
+              <ul class="space-y-2 text-gray-600 dark:text-slate-400">
+                <li>23+ years cybersecurity experience</li>
+                <li>21 years U.S. Navy Pacific Submarine Force</li>
+                <li>TS/SCI clearance (active)</li>
+                <li>CISSP, CISM, CEH certified</li>
+                <li>Master's in Cybersecurity</li>
+                <li>Ph.D. candidate in Cyber Leadership</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Investment</h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 mb-8">
+          6-month minimum engagement
+        </p>
+        <div class="card p-8">
+          <div class="text-4xl font-bold text-brand-gradient mb-4">$5,000 - $8,000/month</div>
+          <p class="text-gray-600 dark:text-slate-400 mb-6">
+            Includes 10-20 hours of strategic guidance per month.
+          </p>
+          <a href="/contact" class="btn-primary">Schedule a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-gradient">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Get Security Leadership Without the Full-Time Cost
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        Let's discuss how fractional CISO services can help your organization mature its security posture.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold bg-white text-brand-magenta hover:bg-gray-100 transition-colors">
+        Book Your Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

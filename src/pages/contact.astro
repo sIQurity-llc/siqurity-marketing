@@ -8,22 +8,15 @@ const contactMethods = [
     icon: '📧',
     title: 'Email',
     description: 'Send us an email anytime',
-    value: 'hello@siqurity.com',
-    href: 'mailto:hello@siqurity.com',
+    value: 'tony@siqurity.com',
+    href: 'mailto:tony@siqurity.com',
   },
   {
-    icon: '📞',
-    title: 'Phone',
-    description: 'Mon-Fri, 9am-5pm EST',
-    value: '(555) 123-4567',
-    href: 'tel:+15551234567',
-  },
-  {
-    icon: '💬',
-    title: 'Live Chat',
-    description: 'Chat with our team',
-    value: 'Start a conversation',
-    href: '#',
+    icon: '💼',
+    title: 'LinkedIn',
+    description: 'Connect with Tony',
+    value: 'Tony Rossi',
+    href: 'https://linkedin.com/in/tonyrossi',
   },
 ];
 ---
@@ -39,22 +32,23 @@ const contactMethods = [
         <span class="text-brand-gradient">Conversation</span>
       </h1>
       <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
-        Have questions about sIQurity? Want to see a demo? We're here to help.
+        Ready to discuss your compliance needs? Schedule a free 30-minute consultation or reach out directly.
       </p>
     </div>
   </section>
 
-  <!-- Contact Form & Info -->
+  <!-- Calendly Section -->
   <section class="section">
     <div class="container-custom">
       <div class="grid lg:grid-cols-3 gap-12">
-        <!-- Contact Methods -->
+        <!-- Contact Info -->
         <div class="space-y-6">
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Get in Touch
           </h2>
+
           {contactMethods.map((method) => (
-            <a href={method.href} class="card p-6 block hover:border-brand-magenta dark:hover:border-brand-pink transition-colors">
+            <a href={method.href} class="card p-6 block hover:border-brand-magenta dark:hover:border-brand-pink transition-colors" target="_blank" rel="noopener noreferrer">
               <div class="flex items-start gap-4">
                 <div class="text-3xl">{method.icon}</div>
                 <div>
@@ -74,137 +68,178 @@ const contactMethods = [
 
           <div class="card p-6 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-800 dark:to-slate-700">
             <h3 class="font-semibold text-gray-900 dark:text-white mb-3">
-              Office Location
+              What to Expect
             </h3>
-            <p class="text-gray-600 dark:text-slate-300 text-sm">
-              sIQurity LLC<br />
-              123 Defense Way, Suite 100<br />
-              Arlington, VA 22201
-            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-slate-300 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                30-minute no-obligation conversation
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                Honest assessment of your situation
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                Clear recommendations (even if it's not us)
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                No pressure, no hard sell
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Contact Form -->
+        <!-- Calendly Embed -->
         <div class="lg:col-span-2">
           <div class="card p-8">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Send Us a Message
+              Schedule a Free Consultation
             </h2>
-            <form class="space-y-6" action="https://formspree.io/f/your-form-id" method="POST">
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label for="firstName" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
-                    First Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    required
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
-                  />
-                </div>
-                <div>
-                  <label for="lastName" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
-                    Last Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    required
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
-                  />
-                </div>
-              </div>
 
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
-                  />
-                </div>
-                <div>
-                  <label for="company" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
-                  />
-                </div>
-              </div>
+            <!-- Calendly inline widget -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/tony-siqurity/30min" style="min-width:320px;height:700px;"></div>
+            <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-              <div>
-                <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
-                  Subject *
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  required
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
-                >
-                  <option value="">Select a subject...</option>
-                  <option value="demo">Request a Demo</option>
-                  <option value="pricing">Pricing Question</option>
-                  <option value="support">Technical Support</option>
-                  <option value="partnership">Partnership Inquiry</option>
-                  <option value="other">Other</option>
-                </select>
+            <!-- Fallback if Calendly doesn't load -->
+            <noscript>
+              <div class="text-center py-12">
+                <p class="text-gray-600 dark:text-slate-400 mb-4">
+                  Please enable JavaScript to use our scheduling widget, or contact us directly:
+                </p>
+                <a href="mailto:tony@siqurity.com" class="btn-primary">
+                  Email tony@siqurity.com
+                </a>
               </div>
-
-              <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors resize-none"
-                  placeholder="Tell us about your compliance needs..."
-                ></textarea>
-              </div>
-
-              <div>
-                <button type="submit" class="btn-primary w-full md:w-auto">
-                  Send Message
-                </button>
-              </div>
-            </form>
+            </noscript>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ CTA -->
+  <!-- Contact Form (alternative) -->
   <section class="section bg-gray-50 dark:bg-slate-800/50">
-    <div class="container-custom text-center">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-        Looking for Quick Answers?
-      </h2>
-      <p class="text-xl text-gray-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-        Check out our pricing page for frequently asked questions, or browse our documentation for technical details.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/pricing#faq" class="btn-secondary">
-          View FAQs
-        </a>
-        <a href="/docs" class="btn-secondary">
-          Browse Documentation
-        </a>
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Prefer to Send a Message?
+          </h2>
+          <p class="text-gray-600 dark:text-slate-400">
+            Fill out the form below and we'll get back to you within one business day.
+          </p>
+        </div>
+        <div class="card p-8">
+          <form class="space-y-6" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                  First Name *
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
+                />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                  Last Name *
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
+                />
+              </div>
+              <div>
+                <label for="company" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                What can we help you with? *
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
+              >
+                <option value="">Select a topic...</option>
+                <option value="cmmc-assessment">CMMC/NIST 800-171 Assessment</option>
+                <option value="stig-review">STIG Compliance Review</option>
+                <option value="vuln-management">Vulnerability Management</option>
+                <option value="documentation">Compliance Documentation</option>
+                <option value="fractional-ciso">Fractional CISO Services</option>
+                <option value="grc-program">GRC Program Buildout</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                Message *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors resize-none"
+                placeholder="Tell us about your compliance needs..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="referral" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                How did you hear about us?
+              </label>
+              <input
+                type="text"
+                id="referral"
+                name="referral"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent transition-colors"
+              />
+            </div>
+
+            <div>
+              <button type="submit" class="btn-primary w-full md:w-auto">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
