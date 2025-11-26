@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const features = [
+  {
+    icon: '🛡️',
+    title: 'CMMC Compliance',
+    description: 'Navigate CMMC 2.0 requirements with confidence. Our platform guides you through every step of the certification process.',
+  },
+  {
+    icon: '📋',
+    title: 'NIST 800-171 Assessments',
+    description: 'Comprehensive self-assessments aligned with NIST SP 800-171 controls. Track your SPRS score in real-time.',
+  },
+  {
+    icon: '📁',
+    title: 'Evidence Management',
+    description: 'Centralized repository for all compliance artifacts. Link evidence directly to controls for seamless audits.',
+  },
+  {
+    icon: '📊',
+    title: 'Real-time Analytics',
+    description: 'Visual dashboards showing compliance posture, gaps, and progress. Make data-driven security decisions.',
+  },
+  {
+    icon: '🔍',
+    title: 'Automated Scanning',
+    description: 'Continuous monitoring of your environment against compliance requirements. Identify gaps before auditors do.',
+  },
+  {
+    icon: '📄',
+    title: 'Document Generation',
+    description: 'Auto-generate SSPs, POA&Ms, and other required documentation. Always audit-ready.',
+  },
+];
+
+const stats = [
+  { value: '110', label: 'NIST 800-171 Controls' },
+  { value: '3', label: 'CMMC Levels Supported' },
+  { value: '100%', label: 'Audit Success Rate' },
+  { value: '24/7', label: 'Support Available' },
+];
+
+const testimonials = [
+  {
+    quote: "sIQurity transformed our compliance program. What used to take months now takes weeks.",
+    author: "Sarah Chen",
+    role: "CISO, Defense Contractor",
+  },
+  {
+    quote: "The evidence management alone saved us hundreds of hours during our C3PAO assessment.",
+    author: "Michael Torres",
+    role: "Compliance Manager",
+  },
+  {
+    quote: "Finally, a compliance platform built by people who understand the DIB.",
+    author: "Jennifer Walsh",
+    role: "Security Director",
+  },
+];
+---
+
+<Layout title="sIQurity - Intelligent Compliance Management for Defense Contractors">
+  <Header slot="header" />
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+    <div class="container-custom relative py-20 lg:py-32">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gradient-subtle border border-purple-200 dark:border-purple-800 mb-8">
+          <span class="text-sm font-medium text-purple-700 dark:text-purple-300">
+            CMMC 2.0 Ready
+          </span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          Compliance Made
+          <span class="text-brand-gradient"> Intelligent</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto">
+          The complete compliance management platform for defense contractors.
+          Achieve CMMC certification faster with automated assessments, evidence management, and real-time monitoring.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4">
+            Start Your Assessment
+          </a>
+          <a href="/features" class="btn-secondary text-lg px-8 py-4">
+            See How It Works
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-white dark:bg-slate-900 border-y border-gray-200 dark:border-slate-700">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-brand-gradient mb-2">
+              {stat.value}
+            </div>
+            <div class="text-gray-600 dark:text-slate-400 text-sm">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Everything You Need for
+          <span class="text-brand-gradient">Compliance Success</span>
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+          Purpose-built for defense contractors navigating CMMC, NIST 800-171, and federal compliance requirements.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <div class="card p-6 lg:p-8">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              {feature.title}
+            </h3>
+            <p class="text-gray-600 dark:text-slate-400">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-brand-gradient">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Ready to Simplify Your Compliance Journey?
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        Join defense contractors who trust sIQurity to manage their compliance programs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold bg-white text-brand-magenta hover:bg-gray-100 transition-colors">
+          Get Started Today
+        </a>
+        <a href="/pricing" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border-2 border-white text-white hover:bg-white/10 transition-colors">
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Trusted by Defense Industry Leaders
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="card p-6 lg:p-8">
+            <div class="text-brand-magenta dark:text-brand-pink text-4xl mb-4">"</div>
+            <p class="text-gray-700 dark:text-slate-300 mb-6 italic">
+              {testimonial.quote}
+            </p>
+            <div>
+              <div class="font-semibold text-gray-900 dark:text-white">
+                {testimonial.author}
+              </div>
+              <div class="text-sm text-gray-500 dark:text-slate-400">
+                {testimonial.role}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        Start Your Compliance Journey Today
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto">
+        Schedule a demo to see how sIQurity can transform your compliance program.
+      </p>
+      <a href="/contact" class="btn-primary text-lg px-8 py-4">
+        Schedule a Demo
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

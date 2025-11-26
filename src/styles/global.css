@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --background-secondary: #f9fafb;
+    --foreground: #111827;
+    --foreground-muted: #6b7280;
+    --border: #e5e7eb;
+    --brand-primary: #C41E8C;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --background-secondary: #1e293b;
+    --foreground: #f1f5f9;
+    --foreground-muted: #94a3b8;
+    --border: #334155;
+    --brand-primary: #E91E8C;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-100;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .text-brand-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #E91E8C 0%, #A855F7 50%, #6366F1 100%);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200;
+    background: linear-gradient(135deg, #E91E8C 0%, #A855F7 50%, #6366F1 100%);
+  }
+
+  .btn-primary:hover {
+    @apply transform -translate-y-0.5;
+    box-shadow: 0 8px 20px rgba(233, 30, 140, 0.4);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border-2 border-gray-300 text-gray-700 hover:border-brand-magenta hover:text-brand-magenta transition-all duration-200 dark:border-slate-600 dark:text-slate-300 dark:hover:border-brand-pink dark:hover:text-brand-pink;
+  }
+
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-shadow duration-200;
+  }
+
+  .section {
+    @apply py-20 lg:py-28;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}

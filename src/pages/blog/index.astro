@@ -1,0 +1,160 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Sample blog posts - in production, these would come from a CMS or markdown files
+const posts = [
+  {
+    slug: 'cmmc-2-0-what-contractors-need-to-know',
+    title: 'CMMC 2.0: What Defense Contractors Need to Know',
+    excerpt: 'The Cybersecurity Maturity Model Certification has evolved. Learn what the 2.0 changes mean for your organization.',
+    date: '2025-01-15',
+    author: 'sIQurity Team',
+    category: 'CMMC',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'nist-800-171-compliance-checklist',
+    title: 'The Complete NIST 800-171 Compliance Checklist',
+    excerpt: 'A comprehensive guide to implementing all 110 security requirements of NIST SP 800-171.',
+    date: '2025-01-10',
+    author: 'sIQurity Team',
+    category: 'NIST',
+    readTime: '12 min read',
+  },
+  {
+    slug: 'calculating-sprs-score',
+    title: 'How to Calculate Your SPRS Score',
+    excerpt: 'Understanding the Supplier Performance Risk System and how to accurately calculate your compliance score.',
+    date: '2025-01-05',
+    author: 'sIQurity Team',
+    category: 'Compliance',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'evidence-management-best-practices',
+    title: 'Evidence Management Best Practices for CMMC',
+    excerpt: 'Learn how to organize, document, and maintain compliance evidence for successful audits.',
+    date: '2024-12-28',
+    author: 'sIQurity Team',
+    category: 'Best Practices',
+    readTime: '10 min read',
+  },
+];
+
+const categories = ['All', 'CMMC', 'NIST', 'Compliance', 'Best Practices', 'Industry News'];
+---
+
+<Layout title="Blog - sIQurity">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 lg:py-28">
+    <div class="container-custom text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        Compliance
+        <span class="text-brand-gradient">Insights</span>
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+        Expert guidance on CMMC, NIST 800-171, and cybersecurity compliance for defense contractors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="py-8 border-b border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-16 lg:top-20 z-40">
+    <div class="container-custom">
+      <div class="flex gap-4 overflow-x-auto pb-2 -mb-2">
+        {categories.map((category, index) => (
+          <button
+            class={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+              index === 0
+                ? 'bg-brand-gradient text-white'
+                : 'bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-200 dark:hover:bg-slate-700'
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-2 gap-8">
+        {posts.map((post) => (
+          <article class="card overflow-hidden group">
+            <div class="aspect-video bg-gradient-to-br from-purple-100 to-blue-100 dark:from-slate-700 dark:to-slate-600"></div>
+            <div class="p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-medium">
+                  {post.category}
+                </span>
+                <span class="text-gray-500 dark:text-slate-400 text-sm">
+                  {post.readTime}
+                </span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-brand-magenta dark:group-hover:text-brand-pink transition-colors">
+                <a href={`/blog/${post.slug}`}>
+                  {post.title}
+                </a>
+              </h2>
+              <p class="text-gray-600 dark:text-slate-400 mb-4">
+                {post.excerpt}
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="text-sm text-gray-500 dark:text-slate-400">
+                  {post.author} &bull; {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </div>
+                <a href={`/blog/${post.slug}`} class="text-brand-magenta dark:text-brand-pink font-medium text-sm hover:underline">
+                  Read more →
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Pagination placeholder -->
+      <div class="mt-12 flex justify-center">
+        <nav class="flex gap-2">
+          <button class="px-4 py-2 rounded-lg bg-brand-gradient text-white font-medium">1</button>
+          <button class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-200 dark:hover:bg-slate-700 font-medium">2</button>
+          <button class="px-4 py-2 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 hover:bg-gray-200 dark:hover:bg-slate-700 font-medium">3</button>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Stay Informed
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 mb-8">
+          Get the latest compliance insights, CMMC updates, and best practices delivered to your inbox.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-magenta dark:focus:ring-brand-pink focus:border-transparent"
+          />
+          <button type="submit" class="btn-primary whitespace-nowrap">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-sm text-gray-500 dark:text-slate-400 mt-4">
+          No spam. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

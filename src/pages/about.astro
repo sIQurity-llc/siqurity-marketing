@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const values = [
+  {
+    title: 'Security First',
+    description: 'We practice what we preach. Our platform is built on a foundation of security best practices.',
+    icon: '🔒',
+  },
+  {
+    title: 'Customer Success',
+    description: 'Your compliance success is our success. We go above and beyond to ensure you achieve certification.',
+    icon: '🤝',
+  },
+  {
+    title: 'Continuous Innovation',
+    description: 'The threat landscape evolves constantly. We continuously improve our platform to stay ahead.',
+    icon: '💡',
+  },
+  {
+    title: 'Transparency',
+    description: 'No hidden fees, no surprises. We believe in clear communication and honest relationships.',
+    icon: '👁️',
+  },
+];
+
+const milestones = [
+  { year: '2024', event: 'sIQurity founded to address DIB compliance challenges' },
+  { year: '2024', event: 'Platform development begins with focus on CMMC 2.0' },
+  { year: '2025', event: 'Beta launch with select defense contractors' },
+  { year: '2025', event: 'General availability planned' },
+];
+---
+
+<Layout title="About - sIQurity">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 lg:py-28">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Making Compliance
+          <span class="text-brand-gradient">Accessible</span>
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-slate-300">
+          We're on a mission to help defense contractors protect national security by simplifying compliance management.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            Our Mission
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-slate-300 mb-6">
+            The Defense Industrial Base faces unprecedented cybersecurity challenges. Small and medium contractors struggle to meet complex compliance requirements while competing for contracts and serving our nation's defense needs.
+          </p>
+          <p class="text-lg text-gray-600 dark:text-slate-300 mb-6">
+            sIQurity was founded to level the playing field. We believe that every defense contractor, regardless of size, should have access to enterprise-grade compliance tools without enterprise-grade complexity or cost.
+          </p>
+          <p class="text-lg text-gray-600 dark:text-slate-300">
+            Our platform combines deep compliance expertise with intelligent automation to make CMMC certification achievable for organizations of all sizes.
+          </p>
+        </div>
+        <div class="card p-8 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-800 dark:to-slate-700">
+          <blockquote class="text-xl text-gray-700 dark:text-slate-300 italic mb-6">
+            "Compliance shouldn't be a barrier to doing business with the government. It should be a foundation for security excellence."
+          </blockquote>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-brand-gradient flex items-center justify-center text-white font-bold">
+              S
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900 dark:text-white">sIQurity Team</div>
+              <div class="text-sm text-gray-500 dark:text-slate-400">Founders</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Our Values
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+          These principles guide everything we do at sIQurity.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {values.map((value) => (
+          <div class="card p-6 text-center">
+            <div class="text-4xl mb-4">{value.icon}</div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              {value.title}
+            </h3>
+            <p class="text-gray-600 dark:text-slate-400">
+              {value.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Our Journey
+        </h2>
+      </div>
+      <div class="max-w-2xl mx-auto">
+        <div class="space-y-8">
+          {milestones.map((milestone, index) => (
+            <div class="flex gap-6">
+              <div class="flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-brand-gradient flex items-center justify-center text-white font-bold text-sm">
+                  {milestone.year}
+                </div>
+                {index < milestones.length - 1 && (
+                  <div class="w-0.5 h-full bg-gray-200 dark:bg-slate-700 mt-2"></div>
+                )}
+              </div>
+              <div class="card p-4 flex-1">
+                <p class="text-gray-700 dark:text-slate-300">{milestone.event}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- sIQurity Foundation -->
+  <section class="section bg-gray-50 dark:bg-slate-800/50">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          The sIQurity Foundation
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-slate-300 mb-8">
+          sIQurity LLC is proud to support the sIQurity Foundation, a nonprofit organization dedicated to advancing cybersecurity education and workforce development in the defense industry.
+        </p>
+        <a href="https://siqurity.org" class="btn-secondary">
+          Learn More at siqurity.org
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-brand-gradient">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Join Us on Our Mission
+      </h2>
+      <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        Whether you're a contractor seeking compliance or a professional looking to join our team, we'd love to hear from you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold bg-white text-brand-magenta hover:bg-gray-100 transition-colors">
+          Get in Touch
+        </a>
+        <a href="/careers" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border-2 border-white text-white hover:bg-white/10 transition-colors">
+          View Careers
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

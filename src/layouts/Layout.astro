@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'sIQurity - Intelligent Compliance Management for Defense Contractors' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href={Astro.url} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot name="header" />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <slot name="footer" />
+
+    <script>
+      // Theme toggle functionality
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      const setTheme = (theme: string) => {
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        localStorage.setItem('theme', theme);
+      };
+
+      setTheme(getTheme() || 'light');
+
+      document.addEventListener('astro:after-swap', () => {
+        setTheme(getTheme() || 'light');
+      });
+    </script>
+  </body>
+</html>
